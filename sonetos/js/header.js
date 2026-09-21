@@ -1,21 +1,12 @@
-const HEADER_PATH = './header.html';
-
+// Carga del fragmento local de cabecera; se conserva la cabecera inicial si falla.
 export async function loadHeader() {
-    const headerContainer = document.querySelector('[data-component="header"]');
-
-    if (!headerContainer) {
-        return;
-    }
-
-    try {
-        const response = await fetch(HEADER_PATH);
-
-        if (!response.ok) {
-            throw new Error(`No se pudo cargar el header: ${response.status}`);
-        }
-
-        headerContainer.innerHTML = await response.text();
-    } catch (error) {
-        console.error(error);
-    }
+  const host = document.querySelector('[data-header]');
+  try {
+    const response = await fetch(new URL('../components/header.html', import.meta.url));
+    if (!response.ok) throw new Error('Cabecera no disponible');
+    const parsed = new DOMParser().parseFromString(await response.text(), 'text/html');
+    const header = parsed.querySelector('header');
+    if (!header) throw new Error('Cabecera no válida');
+    host.replaceChildren(document.importNode(header, true));
+  } catch { /* La cabecera semántica inicial sigue disponible. */ }
 }

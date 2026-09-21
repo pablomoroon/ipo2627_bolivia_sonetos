@@ -1,20 +1,23 @@
-Título: "Definición de soneto"
+# Un soneto me manda hacer Violante
 
 Autor: Lope de Vega
 
-Soneto
-
-Un soneto me manda hacer Violante
-que en mi vida me he visto en tanto aprieto;
-catorce versos dicen que es soneto;
+Un soneto me manda hacer Violante;
+en mi vida me he visto en tal aprieto,
+catorce versos dicen que es soneto,
 burla burlando van los tres delante.
-Yo pensé que no hallara consonante,
+
+Yo pensé que no hallara consonante
 y estoy a la mitad de otro cuarteto;
 mas si me veo en el primer terceto,
 no hay cosa en los cuartetos que me espante.
+
 Por el primer terceto voy entrando,
-y parece que entré con pie derecho,
+y aún parece que entré con pie derecho,
 pues fin con este verso le voy dando.
-Ya estoy en el segundo, y aun sospecho
-que voy los trece versos acabando;
+
+Ya estoy en el segundo, y aún sospecho
+que estoy los trece versos acabando:
 contad si son catorce, y está hecho.
+
+Fuente: https://ciudadseva.com/texto/un-soneto-me-manda-hacer-violante/

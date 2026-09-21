@@ -1,43 +1,27 @@
-# Sonetos
+# Sonetos — estructura adaptada
 
-La aplicación web consiste en un lector de sonetos. Un `soneto` es una composición poética de 14 versos organizados en cuatro estrofas fijas: dos cuartetos (de 4 versos cada uno) y dos tercetos (de tres versos cada uno). 
+Versión reconstruida a partir del lector anterior y de la captura de carpetas. No contiene modificaciones privadas de tus archivos originales: solo se recibió una imagen. Los poemas son transcripciones de las fuentes enlazadas en cada Markdown.
 
-Los objetivos del proyecto son: 
-- Diseño cromático y tipográfico
+## Abrir en localhost
+1. Abre una terminal dentro de `ipo2627_bolivia_sonetos` (la carpeta que contiene los poemas .md).
+2. Ejecuta `py -m http.server 8000` en Windows, o `python3 -m http.server 8000` en macOS/Linux.
+3. Abre http://localhost:8000/sonetos/
+4. Para detener el servidor: Ctrl+C.
 
+No arranques el servidor dentro de la subcarpeta `sonetos`: los poemas están un nivel por encima y deben ser accesibles. Los módulos y fetch requieren HTTP; no abras index.html con doble clic.
 
-# Descripción
+## Organización y MVC
+- sonetos/index.html: estructura semántica y vinculación a CSS y módulo principal.
+- sonetos/css/soneto.css: color, tipografía y espacio, en secciones comentadas.
+- sonetos/data/index.js: catálogo de títulos, autores, fuentes y rutas.
+- sonetos/data/main.js: carga, interpretación, validación y estado del modelo. No accede al DOM.
+- sonetos/js/main.js: clases independientes de vista y controlador, más inicialización.
+- sonetos/js/header.js: carga del fragmento de cabecera con alternativa si falla.
+- sonetos/components/header.html: fragmento de cabecera utilizado.
+- sonetos/header.html: copia de compatibilidad con la estructura de la captura; para modificar la cabecera usada, edita components/header.html.
+- Los cinco .md de la raíz contienen los poemas, con título, autor, cuatro estrofas y fuente.
 
-- La aplicación interactúa con un solo actor que es el usuario que leerá los sonetos. 
-- El sistema dispondrá de un almacén de sonetos entre los que el usuario podrá escoger para proceder a su lectura. Para cada soneto, el almacén recogerá además del propio soneto, su autor y un título identificativo.
-- El sistema ofrecerá un mecanismo para que el usuario escoja el soneto que desee leer con el fin de mostrarlo en pantalla. 
+## Diseño
+Paleta monocromática azul. Georgia para poesía y titulares; Arial para controles. Unidades rem, Grid adaptable, agrupación por proximidad y región común. Clases CSS para estilo y atributos data-* para JS. La vista inserta poemas con textContent, y usa aria-current y disabled para coordinar DOM y estilos. Acceso por teclado, foco visible, enlace de salto y estados de carga/error.
 
-
-# Diseño
-
-## Arquitectura 
-- La aplicación deberá estar implementada siguiendo un patrón MVC (_Model-View-Controller_) con objeto de clarificar y diferenciar las distintas responsabilidades. 
-
-## Organización 
-
-- Tanto la distribución del código de los ficheros como la propia organización de los ficheros incluidos en la carpeta del proyecto deberán facilitar la comprensión y el mantenimiento de la solución aportada. 
-- Se empleará un mecanismo moderno y apropiado para vincular los ficheros HTML, CSS y JS.
-
-## Estilística
-
-La vista del sistema deberá implementarse con el objeto de diferenciar los distintos aspectos considerados: diseño cromático, tipográfico y espacial. Y cada uno estará cimentado en una sólida estrategia:
-  - diseño cromático: monocromática, triádica, complementaria, etc.
-  - diseño tipográfico: dos fuentes contrastadas, una única fuente con niveles distintos de realce, etc.
-  - diseño espacial: selección de unidades de medida y contenedores, principios de diseño `Gestalt`, etc. 
-
-## Interacción 
-
-La implementación de la interacción estará guiada para favorecer la usabilidad de la aplicación
-
-# Buenas prácticas
-
-- Se deberá cuidar el etiquetado HTML con el objeto de reflejar adecuadamente la estructura de la página y del propio soneto.
-- El empleo de una estrategia de selección en CSS de elementos HTML moderna y mantenible
-- Una sólida política de coordinación de JS tanto con el DOM (_Document Object Model_) como con el CSSOM (_CSS Object Model_)
-
-
+Para editar un poema conserva las cuatro estrofas 4/4/3/3, separadas por una línea en blanco. Para añadir uno crea un .md en la raíz y registra sus metadatos en data/index.js.

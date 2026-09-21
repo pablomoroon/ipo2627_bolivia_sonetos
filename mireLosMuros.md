@@ -1,21 +1,23 @@
-Titulo: "Miré los muros"
+# Miré los muros de la patria mía
 
-Autor: "Quevedo"
-
-Soneto
+Autor: Francisco de Quevedo
 
 Miré los muros de la patria mía,
 si un tiempo fuertes ya desmoronados
 de la carrera de la edad cansados
 por quien caduca ya su valentía.
+
 Salime al campo: vi que el sol bebía
-los arroyos del yelo desatados,
+los arroyos del hielo desatados,
 y del monte quejosos los ganados
 que con sombras hurtó su luz al día.
+
 Entré en mi casa: vi que amancillada
 de anciana habitación era despojos,
 mi báculo más corvo y menos fuerte.
+
 Vencida de la edad sentí mi espada,
 y no hallé cosa en que poner los ojos
 que no fuese recuerdo de la muerte.
 
+Fuente: https://ciudadseva.com/texto/mire-los-muros-de-la-patria-mia/

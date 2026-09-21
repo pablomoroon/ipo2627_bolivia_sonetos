@@ -1,15 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lector de Sonetos</title>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sonetos · Una colección para leer despacio</title>
+    <meta name="description" content="Lee sonetos de Quevedo, Garcilaso, Góngora y Lope de Vega.">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231e3551'/%3E%3Ctext x='8' y='25' font-family='Georgia' font-size='26' fill='white'%3ES%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="./css/soneto.css">
     <script type="module" src="./js/main.js"></script>
 </head>
-<body>
-    <div data-component="header"></div>
 
+<body>
+    <a class="skip-link" href="#poem">Saltar al soneto</a>
+    <div data-header>
+        <header class="masthead"><a class="brand" href="./">Sonetos<span class="brand-dot">.</span></a><span
+                class="masthead-note">POESÍA EN CATORCE VERSOS</span></header>
+    </div>
+    <main class="reader">
+        <aside class="collection" aria-labelledby="collection-title">
+            <p class="eyebrow">LA COLECCIÓN</p>
+            <h1 id="collection-title">Un momento<br>para la poesía.</h1>
+            <p class="collection-intro">Cinco sonetos, cuatro voces.<br>Escoge un soneto y empieza a leer.</p>
+            <nav aria-label="Seleccionar soneto">
+                <ol class="poem-list" data-poem-list></ol>
+            </nav>
+            <p class="collection-foot">Dos cuartetos.<br>Dos tercetos.<br>Infinitas lecturas.</p>
+        </aside>
+        <p class="loading" role="status" data-loading>Cargando sonetos…</p>
+        <section hidden class="reading-pane" aria-label="Lectura del soneto">
+            <div class="reading-top"><span class="eyebrow">ANTOLOGÍA · CLÁSICOS EN ESPAÑOL</span><span class="position"
+                    data-position></span></div>
+            <article class="poem" id="poem" tabindex="-1" aria-labelledby="poem-title">
+                <header class="poem-header">
+                    <p class="eyebrow" data-poem-label></p>
+                    <h2 id="poem-title"></h2>
+                    <p class="author" data-author></p>
+                </header>
+                <div class="stanzas" data-stanzas></div>
+                <footer class="poem-footer"><span>14 versos · 4 estrofas</span><a data-source target="_blank"
+                        rel="noopener noreferrer">Leer en la fuente <span aria-hidden="true">↗</span><span
+                            class="sr-only"> (abre una pestaña nueva)</span></a></footer>
+            </article>
+            <nav class="reading-nav" aria-label="Recorrer la colección"><button type="button" data-previous>←
+                    Anterior</button><span class="nav-ornament" aria-hidden="true">⁂</span><button type="button"
+                    data-next>Siguiente →</button></nav>
+        </section>
+    </main>
+    <footer class="site-footer"><span>SONETOS</span><span>Un espacio para leer despacio.</span></footer>
+    <p class="sr-only" role="status" data-status></p>
+    <noscript>
+        <style>
+            .loading {
+                display: none
+            }
+        </style>
+        <p>Activa JavaScript para seleccionar y leer los sonetos de esta colección.</p>
+    </noscript>
 </body>
+
 </html>
